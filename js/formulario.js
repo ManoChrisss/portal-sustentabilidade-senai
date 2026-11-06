@@ -2,9 +2,7 @@ const EMAILJS_PUBLIC_KEY = "-5Kwri3YujiMv39yH";
 const EMAILJS_SERVICE_ID = "service_pgz0f39";
 const EMAILJS_TEMPLATE_ID = "template_qpy1xiv";
 const EMAILJS_RECIPIENTS = [
-  "christianmatheus.102005@gmail.com",
-  "christian.chaves@aedb.br",
-  "christianmatheus1.102005@gmail.com",
+  "christianmatheus.102005@gmail.com"
 ];
 
 /*lucylea.carvalho@gmail.com*/

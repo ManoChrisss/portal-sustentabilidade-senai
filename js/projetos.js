@@ -10,6 +10,7 @@ icons:
 /* projetos */
 
 const PROJETOS = [
+
     /*
     {
       title: "Desperdício de energia",
@@ -37,15 +38,13 @@ const PROJETOS = [
       benefits: "Redução do desperdicio de água."
     },
 */ 
-    
-
 
 ];
 
 
 
 /*titulo*/
-const PROJETO_EM_DESTAQUE = "Desperdício de energia";
+const PROJETO_EM_DESTAQUE = "";
 
 const STATUS_INFO = {
   "em-andamento": { rotulo: "EM ANDAMENTO", classe: "status-em-andamento" },
