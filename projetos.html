@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acompanhar projetos | Portal de Sustentabilidade FIRJAN SENAI</title>
+  <meta name="description" content="Veja os projetos de sustentabilidade propostos pelos alunos do SENAI e acompanhe o status de cada um.">
+  <meta name="theme-color" content="#004b8d">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/projetos.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo-link" href="index.html" aria-label="FIRJAN SENAI – página inicial">
+        <div class="logo-container">
+          <!-- FIRJAN SENAI logo goes here -->
+          <img src="img/senai.png" alt="FIRJAN SENAI">
+          <span class="logo-placeholder" aria-hidden="true">Logo<br>FIRJAN SENAI</span>
+        </div>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Menu principal" aria-expanded="false" aria-controls="menu-principal">
+        <span class="barras" aria-hidden="true"></span><span class="texto">Menu</span>
+      </button>
+      <nav id="menu-principal" class="nav-principal" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="projetos.html" aria-current="page">Acompanhar projetos</a>
+        <a href="sobre.html">Sobre nós</a>
+        <a href="registrar.html" class="nav-destaque">Registrar uma ideia</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero hero--curto" aria-labelledby="titulo-pagina">
+      <svg class="hero-folha" viewBox="0 0 120 200" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="grad-folha" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3fb472"/>
+            <stop offset="1" stop-color="#2477c4"/>
+          </linearGradient>
+        </defs>
+        <path d="M60 6C114 44 130 120 60 194 -10 120 6 44 60 6Z" fill="url(#grad-folha)" opacity=".22"/>
+        <path d="M60 6C114 44 130 120 60 194 -10 120 6 44 60 6Z" fill="none" stroke="url(#grad-folha)" stroke-width="1.6" opacity=".7"/>
+        <path d="M60 14V198" stroke="#9fdcb9" stroke-width="1.6" opacity=".7"/>
+        <path d="M60 60L34 40M60 88L28 64M60 118L30 92M60 148L40 124M60 60L86 40M60 88L92 64M60 118L90 92M60 148L80 124" stroke="#9fdcb9" stroke-width="1.2" opacity=".55" fill="none"/>
+      </svg>
+      <div class="container">
+        <h1 id="titulo-pagina">Acompanhar projetos</h1>
+        <p class="hero-sub">Veja o que os alunos já propuseram e em que etapa cada projeto está.</p>
+      </div>
+    </section>
+
+    <section class="secao" style="padding-top:2.5rem" aria-label="Lista de projetos">
+      <div class="container">
+
+        <!-- Filtros e busca (escondidos automaticamente quando não há projetos) -->
+        <div id="area-filtros" class="filtros">
+          <div>
+            <label for="busca">Buscar por título ou categoria</label>
+            <input type="search" id="busca" placeholder="Ex.: energia, coleta seletiva" autocomplete="off">
+          </div>
+          <div>
+            <label for="filtro-categoria">Categoria</label>
+            <select id="filtro-categoria"><option value="">Todas as categorias</option></select>
+          </div>
+          <div class="filtro-status" role="group" aria-label="Filtrar por status">
+            <button type="button" data-status="todos" aria-pressed="true">Todos <span class="contagem">0</span></button>
+            <button type="button" data-status="pendente" aria-pressed="false">Pendentes <span class="contagem">0</span></button>
+            <button type="button" data-status="em-andamento" aria-pressed="false">Em andamento <span class="contagem">0</span></button>
+            <button type="button" data-status="concluido" aria-pressed="false">Concluídos <span class="contagem">0</span></button>
+          </div>
+        </div>
+
+        <p id="contador-resultados" class="contador-resultados" role="status" aria-live="polite"></p>
+
+        <!-- Os cards são criados por js/projetos.js a partir da lista PROJETOS -->
+        <div id="lista-projetos" class="projetos-grid"></div>
+
+        <!-- Estado vazio: nenhum projeto cadastrado -->
+        <div id="estado-vazio" class="estado-vazio" hidden>
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M32 6c14 10 20 28 0 52C12 34 18 16 32 6Z"/>
+            <path d="M32 14v44M32 28l-9-8M32 38l-11-9M32 28l9-8M32 38l11-9"/>
+          </svg>
+          <h2>Não há projetos cadastrados no momento.</h2>
+          <p>Novos projetos poderão ser adicionados em breve.</p>
+          <a class="btn btn-azul" href="registrar.html">Registrar uma ideia</a>
+        </div>
+
+        <!-- Nenhum resultado para os filtros escolhidos -->
+        <div id="sem-resultados" class="estado-vazio" hidden>
+          <h2>Nenhum projeto encontrado.</h2>
+          <p>Tente outro termo de busca ou remova algum filtro.</p>
+          <button type="button" id="limpar-filtros" class="btn btn-contorno">Limpar filtros</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Portal de Sustentabilidade</h2>
+          <p>Um espaço para os alunos do SENAI participarem das melhorias da escola.</p>
+        </div>
+        <div>
+          <h2>Navegação</h2>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="registrar.html">Registrar uma ideia</a></li>
+            <li><a href="projetos.html">Acompanhar projetos</a></li>
+            <li><a href="sobre.html">Sobre nós</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Tipos de envio</h2>
+          <ul>
+            <li><a href="registrar.html?tipo=problema">Relato de problema</a></li>
+            <li><a href="registrar.html?tipo=sugestao">Sugestão</a></li>
+            <li><a href="registrar.html?tipo=projeto">Proposta de projeto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-fim"><p>Enviar uma ideia não garante sua implementação. Protótipo do portal de sustentabilidade FIRJAN SENAI.</p></div>
+    </div>
+  </footer>
+</body>
+</html>

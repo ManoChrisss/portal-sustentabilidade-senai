@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal de Sustentabilidade | FIRJAN SENAI</title>
+  <meta name="description" content="Relate problemas, envie sugestões e proponha projetos de sustentabilidade para melhorar o ambiente do SENAI.">
+  <meta name="theme-color" content="#004b8d">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/projetos.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo-link" href="index.html" aria-label="FIRJAN SENAI – página inicial">
+        <div class="logo-container">
+          <!-- FIRJAN SENAI logo goes here -->
+          <img src="img/senai.png" alt="FIRJAN SENAI">
+          <span class="logo-placeholder" aria-hidden="true">Logo<br>FIRJAN SENAI</span>
+        </div>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Menu principal" aria-expanded="false" aria-controls="menu-principal">
+        <span class="barras" aria-hidden="true"></span><span class="texto">Menu</span>
+      </button>
+      <nav id="menu-principal" class="nav-principal" aria-label="Navegação principal">
+        <a href="index.html" aria-current="page">Início</a>
+        <a href="projetos.html">Acompanhar projetos</a>
+        <a href="sobre.html">Sobre nós</a>
+        <a href="registrar.html" class="nav-destaque">Registrar uma ideia</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="titulo-hero">
+      <!-- Folha decorativa -->
+      <svg class="hero-folha" viewBox="0 0 120 200" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="grad-folha" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3fb472"/>
+            <stop offset="1" stop-color="#2477c4"/>
+          </linearGradient>
+        </defs>
+        <path d="M60 6C114 44 130 120 60 194 -10 120 6 44 60 6Z" fill="url(#grad-folha)" opacity=".22"/>
+        <path d="M60 6C114 44 130 120 60 194 -10 120 6 44 60 6Z" fill="none" stroke="url(#grad-folha)" stroke-width="1.6" opacity=".7"/>
+        <path d="M60 14V198" stroke="#9fdcb9" stroke-width="1.6" opacity=".7"/>
+        <path d="M60 60L34 40M60 88L28 64M60 118L30 92M60 148L40 124M60 60L86 40M60 88L92 64M60 118L90 92M60 148L80 124" stroke="#9fdcb9" stroke-width="1.2" opacity=".55" fill="none"/>
+      </svg>
+
+      <div class="container">
+        <h1 id="titulo-hero">Transforme ideias em melhorias para o SENAI.</h1>
+        <p class="hero-sub">Aluno do SENAI, você pode relatar problemas, enviar sugestões e propor projetos de sustentabilidade para deixar a escola mais limpa, econômica e consciente.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="escolhas">
+        <article class="escolha reveal">
+          <div class="escolha-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          </div>
+          <h2>Registrar uma ideia</h2>
+          <p>Viu algo que precisa melhorar ou teve uma ideia? Relate um problema, mande uma sugestão ou apresente um projeto completo.</p>
+          <a class="btn btn-azul" href="registrar.html">Registrar uma ideia
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+
+        <article class="escolha escolha--verde reveal">
+          <div class="escolha-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+          </div>
+          <h2>Acompanhar projetos</h2>
+          <p>Veja o que outros alunos já propuseram e descubra quais projetos estão pendentes, em andamento ou concluídos.</p>
+          <a class="btn btn-verde" href="projetos.html">Acompanhar projetos
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+      </div>
+
+      <!-- Estatísticas: os números são calculados a partir da lista PROJETOS em js/projetos.js -->
+      <section class="estatisticas reveal" aria-label="Estatísticas dos projetos">
+        <div class="estatistica"><strong data-stat="total">0</strong><span>Projetos enviados</span></div>
+        <div class="estatistica"><strong data-stat="andamento">0</strong><span>Projetos em andamento</span></div>
+        <div class="estatistica"><strong data-stat="concluido">0</strong><span>Projetos concluídos</span></div>
+        <div class="estatistica"><strong data-stat="pendente">0</strong><span>Projetos pendentes</span></div>
+      </section>
+    </div>
+
+    <!-- Projeto em destaque: só aparece se PROJETO_EM_DESTAQUE (js/projetos.js) estiver preenchido -->
+    <section id="destaque" class="secao" aria-labelledby="titulo-destaque" hidden>
+      <div class="container reveal">
+        <div class="secao-titulo"><h2 id="titulo-destaque">Projeto em destaque</h2></div>
+        <div id="destaque-conteudo" class="destaque"></div>
+      </div>
+    </section>
+
+    <section class="secao secao--azul" aria-labelledby="titulo-como" style="margin-top:4.5rem">
+      <div class="container">
+        <div class="secao-titulo reveal">
+          <h2 id="titulo-como">Como funciona</h2>
+          <p>Da sua ideia até a melhoria na escola, o caminho tem cinco etapas.</p>
+        </div>
+        <ol class="passos reveal">
+          <li class="passo"><h3>Você envia</h3><p>Preenche o formulário com o problema, a sugestão ou o projeto.</p></li>
+          <li class="passo"><h3>O SENAI analisa</h3><p>A equipe responsável lê a proposta e verifica se está completa.</p></li>
+          <li class="passo"><h3>O projeto é avaliado</h3><p>Viabilidade, custo e impacto ambiental são considerados.</p></li>
+          <li class="passo"><h3>Pode ser implementado</h3><p>Propostas aprovadas ganham uma equipe e um prazo.</p></li>
+          <li class="passo"><h3>O status é atualizado</h3><p>Acompanhe tudo na página de projetos.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="secao" aria-labelledby="titulo-tipos">
+      <div class="container">
+        <div class="secao-titulo reveal">
+          <h2 id="titulo-tipos">Qual tipo de contribuição enviar?</h2>
+          <p>Cada tipo pede um nível diferente de detalhe. Escolha o que combina com a sua ideia.</p>
+        </div>
+        <div class="tipos">
+          <article class="tipo-card tipo-card--problema reveal">
+            <span class="tipo-rotulo">Relato de problema</span>
+            <h3>Algo precisa de atenção</h3>
+            <ul>
+              <li>Aponta o que está errado hoje</li>
+              <li>Informa o local e a categoria</li>
+              <li>Solução sugerida é opcional</li>
+            </ul>
+            <a class="link-seta" href="registrar.html?tipo=problema">Relatar um problema</a>
+          </article>
+          <article class="tipo-card tipo-card--sugestao reveal">
+            <span class="tipo-rotulo">Sugestão</span>
+            <h3>Tenho uma ideia simples</h3>
+            <ul>
+              <li>Uma melhoria direta e objetiva</li>
+              <li>Não exige orçamento nem plano</li>
+              <li>Ideal para ideias rápidas</li>
+            </ul>
+            <a class="link-seta" href="registrar.html?tipo=sugestao">Enviar uma sugestão</a>
+          </article>
+          <article class="tipo-card tipo-card--projeto reveal">
+            <span class="tipo-rotulo">Proposta de projeto</span>
+            <h3>Quero montar um projeto</h3>
+            <ul>
+              <li>Problema, solução e benefícios</li>
+              <li>Materiais, custo e prazo estimados</li>
+              <li>Impacto ambiental esperado</li>
+            </ul>
+            <a class="link-seta" href="registrar.html?tipo=projeto">Propor um projeto</a>
+          </article>
+        </div>
+
+        <div class="aviso reveal" style="margin-top:2rem" role="note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <p><strong>Importante:</strong> enviar uma ideia não garante que o SENAI vá implementá-la. Todas as contribuições são analisadas, mas a decisão depende de viabilidade, custo, segurança e prioridades da escola.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container reveal" aria-labelledby="titulo-final">
+      <div class="faixa-final">
+        <div>
+          <h2 id="titulo-final">Sua ideia pode mudar a escola.</h2>
+          <p>Leva poucos minutos para enviar.</p>
+        </div>
+        <a class="btn btn-branco" href="registrar.html">Registrar uma ideia</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Portal de Sustentabilidade</h2>
+          <p>Um espaço para os alunos do SENAI participarem das melhorias da escola.</p>
+        </div>
+        <div>
+          <h2>Navegação</h2>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="registrar.html">Registrar uma ideia</a></li>
+            <li><a href="projetos.html">Acompanhar projetos</a></li>
+            <li><a href="sobre.html">Sobre nós</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Tipos de envio</h2>
+          <ul>
+            <li><a href="registrar.html?tipo=problema">Relato de problema</a></li>
+            <li><a href="registrar.html?tipo=sugestao">Sugestão</a></li>
+            <li><a href="registrar.html?tipo=projeto">Proposta de projeto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-fim"><p>Enviar uma ideia não garante sua implementação. Protótipo do portal de sustentabilidade FIRJAN SENAI.</p></div>
+    </div>
+  </footer>
+</body>
+</html>

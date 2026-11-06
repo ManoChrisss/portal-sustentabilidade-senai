@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre nós | Portal de Sustentabilidade FIRJAN SENAI</title>
+  <meta name="description" content="Conheça a instrutora e os alunos que fazem parte do Portal de Sustentabilidade SENAI.">
+  <meta name="theme-color" content="#004b8d">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/sobre.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo-link" href="index.html" aria-label="FIRJAN SENAI – página inicial">
+        <div class="logo-container">
+          <img src="img/senai.png" alt="FIRJAN SENAI">
+          <span class="logo-placeholder" aria-hidden="true">Logo<br>FIRJAN SENAI</span>
+        </div>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Menu principal" aria-expanded="false" aria-controls="menu-principal">
+        <span class="barras" aria-hidden="true"></span><span class="texto">Menu</span>
+      </button>
+      <nav id="menu-principal" class="nav-principal" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="projetos.html">Acompanhar projetos</a>
+        <a href="sobre.html" aria-current="page">Sobre nós</a>
+        <a href="registrar.html" class="nav-destaque">Registrar uma ideia</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero hero--curto" aria-labelledby="titulo-pagina">
+      <svg class="hero-folha" viewBox="0 0 120 200" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="grad-folha" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3fb472"/>
+            <stop offset="1" stop-color="#2477c4"/>
+          </linearGradient>
+        </defs>
+        <path d="M60 6C114 44 130 120 60 194 -10 120 6 44 60 6Z" fill="url(#grad-folha)" opacity=".22"/>
+        <path d="M60 6C114 44 130 120 60 194 -10 120 6 44 60 6Z" fill="none" stroke="url(#grad-folha)" stroke-width="1.6" opacity=".7"/>
+        <path d="M60 14V198" stroke="#9fdcb9" stroke-width="1.6" opacity=".7"/>
+        <path d="M60 60L34 40M60 88L28 64M60 118L30 92M60 148L40 124M60 60L86 40M60 88L92 64M60 118L90 92M60 148L80 124" stroke="#9fdcb9" stroke-width="1.2" opacity=".55" fill="none"/>
+      </svg>
+      <div class="container">
+        <h1 id="titulo-pagina">Sobre nós</h1>
+        <p class="hero-sub">Conheça as pessoas por trás do nosso Portal de Sustentabilidade.</p>
+      </div>
+    </section>
+
+    <section class="secao sobre-secao" aria-labelledby="titulo-equipe">
+      <div class="container">
+        <div class="secao-titulo reveal">
+          <h2 id="titulo-equipe">Uma equipe, muitas ideias</h2>
+          <p>Nosso trabalho é guiado por quem acredita que pequenas atitudes podem inspirar grandes mudanças.</p>
+        </div>
+
+        <div class="sobre-piramide">
+          <article class="sobre-instrutora reveal">
+            <span class="sobre-etiqueta">Nossa instrutora</span>
+            <button class="sobre-foto" type="button" data-foto-ampliar="img/lucy.jpg" data-foto-alt="Lucy Vetter, Instrutora Assistente ADM." aria-label="Ampliar foto de Lucy Vetter">
+              <img src="img/lucy.jpg" alt="Lucy Vetter" width="420" height="420">
+            </button>
+            <p class="sobre-foto-dica">Clique na foto para ampliar</p>
+            <h3>Lucy Vetter</h3>
+            <p>Instrutora Assistente ADM.</p>
+          </article>
+
+          <div class="sobre-conexao" aria-hidden="true"></div>
+          <h2 class="sobre-grupo-titulo reveal">Nosso grupo</h2>
+          <!-- Use o placeholder para integrantes sem foto disponível. -->
+          <ul class="sobre-integrantes" aria-label="Integrantes do grupo">
+            <li class="sobre-integrante reveal">
+              <button class="sobre-integrante-foto" type="button" data-foto-ampliar="img/chris.jpeg" data-foto-alt="Foto de Christian Matheus" aria-label="Ampliar foto de Christian Matheus">
+                <img src="img/chris.jpeg" alt="Foto de Christian Matheus" width="240" height="240">
+              </button>
+              <span>Christian Matheus</span>
+            </li>
+            <li class="sobre-integrante reveal">
+              <button class="sobre-integrante-foto" type="button" data-foto-ampliar="img/foto-placeholder.svg" data-foto-alt="Foto de Davi Costa" aria-label="Ampliar foto de Davi Costa">
+                <img src="img/davi.jpg" alt="Foto não disponível de Davi Costa" width="240" height="240">
+              </button>
+              <span>Davi Costa</span>
+            </li>
+            <li class="sobre-integrante reveal">
+              <button class="sobre-integrante-foto" type="button" data-foto-ampliar="img/foto-placeholder.svg" data-foto-alt="Foto de Thais Castro" aria-label="Ampliar foto de Thais Castro">
+                <img src="img/danada.jpeg" alt="Foto não disponível de Thais Castro" width="240" height="240">
+              </button>
+              <span>Thais Castro</span>
+            </li>
+            <li class="sobre-integrante reveal">
+              <button class="sobre-integrante-foto" type="button" data-foto-ampliar="img/thifanny.jpeg" data-foto-alt="Foto de Thifanny" aria-label="Ampliar foto de Thifanny">
+                <img src="img/thifanny.jpeg" alt="Foto de Thifanny" width="240" height="240">
+              </button>
+              <span>Thifanny</span>
+            </li>
+            <li class="sobre-integrante reveal">
+              <button class="sobre-integrante-foto" type="button" data-foto-ampliar="img/victor.jpeg" data-foto-alt="Foto de Victor" aria-label="Ampliar foto de Victor">
+                <img src="img/victor.jpeg" alt="Foto de Victor" width="240" height="240">
+              </button>
+              <span>Victor</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao--azul sobre-historia" aria-labelledby="titulo-historia">
+      <div class="container">
+        <article class="sobre-texto reveal">
+          <span class="sobre-etiqueta">Como tudo começou</span>
+          <h2 id="titulo-historia">Uma ideia que pode transformar o nosso espaço</h2>
+          <p>Inspirados pela vontade de promover mudanças e preservar o meio ambiente, começamos a pensar em maneiras de tornar a nossa escola mais sustentável. Nossa instrutora, Lucy Vetter, incentivou o grupo a transformar esse desejo em ação e a criar um canal para ouvir a comunidade escolar.</p>
+          <p>Assim nasceu este portal: um espaço para compartilhar problemas, sugestões e projetos de sustentabilidade. Acreditamos que, quando cada pessoa pode contribuir, boas ideias ganham força e podem se tornar melhorias para todos.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="sobre-modal" id="modal-foto" aria-label="Foto ampliada">
+    <div class="sobre-modal-conteudo">
+      <button class="sobre-modal-fechar" type="button" aria-label="Fechar foto ampliada">×</button>
+      <img id="foto-ampliada" src="img/lucy.jpg" alt="">
+      <p id="legenda-foto"></p>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Portal de Sustentabilidade</h2>
+          <p>Um espaço para os alunos do SENAI participarem das melhorias da escola.</p>
+        </div>
+        <div>
+          <h2>Navegação</h2>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="registrar.html">Registrar uma ideia</a></li>
+            <li><a href="projetos.html">Acompanhar projetos</a></li>
+            <li><a href="sobre.html" aria-current="page">Sobre nós</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Tipos de envio</h2>
+          <ul>
+            <li><a href="registrar.html?tipo=problema">Relato de problema</a></li>
+            <li><a href="registrar.html?tipo=sugestao">Sugestão</a></li>
+            <li><a href="registrar.html?tipo=projeto">Proposta de projeto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-fim"><p>Enviar uma ideia não garante sua implementação. Protótipo do portal de sustentabilidade FIRJAN SENAI.</p></div>
+    </div>
+  </footer>
+</body>
+</html>

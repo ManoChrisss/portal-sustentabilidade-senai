@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registrar uma ideia | Portal de Sustentabilidade FIRJAN SENAI</title>
+  <meta name="description" content="Relate um problema, envie uma sugestão ou proponha um projeto de sustentabilidade para o SENAI.">
+  <meta name="theme-color" content="#004b8d">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- EmailJS: biblioteca oficial para enviar o formulário por e-mail -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/formulario.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo-link" href="index.html" aria-label="FIRJAN SENAI – página inicial">
+        <div class="logo-container">
+          <!-- FIRJAN SENAI logo goes here -->
+          <img src="img/senai.png" alt="FIRJAN SENAI">
+          <span class="logo-placeholder" aria-hidden="true">Logo<br>FIRJAN SENAI</span>
+        </div>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Menu principal" aria-expanded="false" aria-controls="menu-principal">
+        <span class="barras" aria-hidden="true"></span><span class="texto">Menu</span>
+      </button>
+      <nav id="menu-principal" class="nav-principal" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="projetos.html">Acompanhar projetos</a>
+        <a href="sobre.html">Sobre nós</a>
+        <a href="registrar.html" class="nav-destaque" aria-current="page">Registrar uma ideia</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero hero--curto" aria-labelledby="titulo-pagina">
+      <svg class="hero-folha" viewBox="0 0 120 200" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="grad-folha" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3fb472"/>
+            <stop offset="1" stop-color="#2477c4"/>
+          </linearGradient>
+        </defs>
+        <path d="M60 6C114 44 130 120 60 194 -10 120 6 44 60 6Z" fill="url(#grad-folha)" opacity=".22"/>
+        <path d="M60 6C114 44 130 120 60 194 -10 120 6 44 60 6Z" fill="none" stroke="url(#grad-folha)" stroke-width="1.6" opacity=".7"/>
+        <path d="M60 14V198" stroke="#9fdcb9" stroke-width="1.6" opacity=".7"/>
+        <path d="M60 60L34 40M60 88L28 64M60 118L30 92M60 148L40 124M60 60L86 40M60 88L92 64M60 118L90 92M60 148L80 124" stroke="#9fdcb9" stroke-width="1.2" opacity=".55" fill="none"/>
+      </svg>
+      <div class="container">
+        <h1 id="titulo-pagina">Registrar uma ideia</h1>
+        <p class="hero-sub">Conte o que precisa melhorar ou apresente um projeto. Quanto mais detalhes, mais fácil é analisar.</p>
+      </div>
+    </section>
+
+    <section class="secao" style="padding-top:2.5rem">
+      <div class="container registro-layout">
+
+        <form id="form-contribuicao" novalidate>
+          <div id="resumo-erros" class="resumo-erros" role="alert" hidden></div>
+
+          <fieldset class="form-bloco">
+            <legend>Seus dados</legend>
+            <p class="form-nota">Campos com <span class="obrig" style="color:var(--erro)" aria-hidden="true">*</span><span class="sr-only">asterisco</span> são obrigatórios.</p>
+            <div class="grid-2">
+              <div class="campo">
+                <label for="nome">Nome completo <span class="obrig" aria-hidden="true">*</span></label>
+                <input type="text" id="nome" name="nome" autocomplete="name" required aria-required="true" aria-describedby="erro-nome">
+                <span class="campo-erro" id="erro-nome"></span>
+              </div>
+              <div class="campo">
+                <label for="email">E-mail <span class="obrig" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" autocomplete="email" required aria-required="true" aria-describedby="erro-email">
+                <span class="campo-erro" id="erro-email"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-bloco">
+            <legend>Sua contribuição</legend>
+            <div class="campo">
+              <label for="tipo">Tipo de envio <span class="obrig" aria-hidden="true">*</span></label>
+              <select id="tipo" name="tipo" required aria-required="true" aria-describedby="tipo-explica erro-tipo">
+                <option value="">Selecione o tipo de envio</option>
+                <option value="problema">Relatar um problema</option>
+                <option value="sugestao">Enviar uma sugestão</option>
+                <option value="projeto">Propor um projeto de sustentabilidade</option>
+              </select>
+              <span class="campo-erro" id="erro-tipo"></span>
+              <div id="tipo-explica" class="tipo-explica" aria-live="polite"></div>
+            </div>
+
+            <div class="campo" style="margin-top:1.15rem">
+              <label id="rotulo-titulo" for="titulo">Título<span class="obrig" aria-hidden="true"> *</span></label>
+              <input type="text" id="titulo" name="titulo" maxlength="120" required aria-required="true" aria-describedby="erro-titulo">
+              <span class="campo-erro" id="erro-titulo"></span>
+            </div>
+            <div class="campo" style="margin-top:1.15rem">
+              <label id="rotulo-descricao" for="descricao">Descrição<span class="obrig" aria-hidden="true"> *</span></label>
+              <textarea id="descricao" name="descricao" maxlength="2000" required aria-required="true" aria-describedby="erro-descricao"></textarea>
+              <span class="campo-erro" id="erro-descricao"></span>
+            </div>
+          </fieldset>
+
+          <!-- ===== Campos extras: RELATO DE PROBLEMA ===== -->
+          <div id="grupo-problema" class="grupo-condicional grupo-condicional--azul" inert aria-hidden="true">
+            <div class="grupo-interno">
+              <fieldset class="form-bloco">
+                <legend>Detalhes do problema</legend>
+                <div class="grid-2">
+                  <div class="campo">
+                    <label for="categoria_problema">Categoria</label>
+                    <select id="categoria_problema" name="categoria_problema" disabled></select>
+                  </div>
+                  <div class="campo">
+                    <label for="local_problema">Local</label>
+                    <input type="text" id="local_problema" name="local_problema" maxlength="120" placeholder="Ex.: banheiro do 2º andar" disabled>
+                  </div>
+                </div>
+                <div class="campo" style="margin-top:1.15rem">
+                  <label for="solucao_problema">Solução sugerida</label>
+                  <span class="ajuda">Se você já pensou em como resolver, conte aqui.</span>
+                  <textarea id="solucao_problema" name="solucao_problema" maxlength="1500" disabled></textarea>
+                </div>
+                <div class="campo" style="margin-top:1.15rem">
+                  <label for="obs_problema">Informações adicionais <span class="ajuda" style="display:inline">(opcional)</span></label>
+                  <textarea id="obs_problema" name="obs_problema" maxlength="1500" disabled></textarea>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <!-- ===== Campos extras: SUGESTÃO ===== -->
+          <div id="grupo-sugestao" class="grupo-condicional grupo-condicional--cinza" inert aria-hidden="true">
+            <div class="grupo-interno">
+              <fieldset class="form-bloco">
+                <legend>Detalhes da sugestão</legend>
+                <div class="grid-2">
+                  <div class="campo">
+                    <label for="categoria_sugestao">Categoria</label>
+                    <select id="categoria_sugestao" name="categoria_sugestao" disabled></select>
+                  </div>
+                  <div class="campo">
+                    <label for="local_sugestao">Local</label>
+                    <input type="text" id="local_sugestao" name="local_sugestao" maxlength="120" placeholder="Ex.: pátio, biblioteca, oficina" disabled>
+                  </div>
+                </div>
+                <div class="campo" style="margin-top:1.15rem">
+                  <label for="obs_sugestao">Informações adicionais <span class="ajuda" style="display:inline">(opcional)</span></label>
+                  <textarea id="obs_sugestao" name="obs_sugestao" maxlength="1500" disabled></textarea>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <!-- ===== Campos extras: PROPOSTA DE PROJETO ===== -->
+          <div id="grupo-projeto" class="grupo-condicional grupo-condicional--verde" inert aria-hidden="true">
+            <div class="grupo-interno">
+              <fieldset class="form-bloco">
+                <legend>Detalhes do projeto</legend>
+                <p class="form-nota">Preencha o que souber. Campos em branco serão marcados como "Não informado".</p>
+                <div class="grid-2">
+                  <div class="campo">
+                    <label for="categoria_projeto">Categoria do projeto</label>
+                    <select id="categoria_projeto" name="categoria_projeto" disabled></select>
+                  </div>
+                  <div class="campo">
+                    <label for="local_projeto">Local de aplicação</label>
+                    <input type="text" id="local_projeto" name="local_projeto" maxlength="120" placeholder="Ex.: refeitório" disabled>
+                  </div>
+                </div>
+                <div class="campo" style="margin-top:1.15rem">
+                  <label for="problema_projeto">Problema que o projeto pretende resolver</label>
+                  <textarea id="problema_projeto" name="problema_projeto" maxlength="1500" disabled></textarea>
+                </div>
+                <div class="campo" style="margin-top:1.15rem">
+                  <label for="solucao_projeto">Solução proposta</label>
+                  <textarea id="solucao_projeto" name="solucao_projeto" maxlength="1500" disabled></textarea>
+                </div>
+                <div class="campo" style="margin-top:1.15rem">
+                  <label for="materiais_projeto">Materiais necessários</label>
+                  <span class="ajuda">Separe os itens por vírgula ou linha.</span>
+                  <textarea id="materiais_projeto" name="materiais_projeto" maxlength="1500" style="min-height:90px" disabled></textarea>
+                </div>
+                <div class="grid-2" style="margin-top:1.15rem">
+                  <div class="campo">
+                    <label for="custo_projeto">Custo estimado</label>
+                    <input type="text" id="custo_projeto" name="custo_projeto" maxlength="80" placeholder="Ex.: R$ 500" disabled>
+                  </div>
+                  <div class="campo">
+                    <label for="prazo_projeto">Tempo estimado de implementação</label>
+                    <input type="text" id="prazo_projeto" name="prazo_projeto" maxlength="80" placeholder="Ex.: 2 meses" disabled>
+                  </div>
+                </div>
+                <div class="campo" style="margin-top:1.15rem">
+                  <label for="pessoas_projeto">Pessoas e recursos necessários</label>
+                  <textarea id="pessoas_projeto" name="pessoas_projeto" maxlength="1500" style="min-height:90px" disabled></textarea>
+                </div>
+                <div class="campo" style="margin-top:1.15rem">
+                  <label for="beneficios_projeto">Benefícios esperados</label>
+                  <textarea id="beneficios_projeto" name="beneficios_projeto" maxlength="1500" style="min-height:90px" disabled></textarea>
+                </div>
+                <div class="campo" style="margin-top:1.15rem">
+                  <label for="impacto_projeto">Impacto ambiental esperado</label>
+                  <textarea id="impacto_projeto" name="impacto_projeto" maxlength="1500" style="min-height:90px" disabled></textarea>
+                </div>
+                <div class="campo" style="margin-top:1.15rem">
+                  <label for="obs_projeto">Observações adicionais <span class="ajuda" style="display:inline">(opcional)</span></label>
+                  <textarea id="obs_projeto" name="obs_projeto" maxlength="1500" style="min-height:90px" disabled></textarea>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <!-- Campo-isca contra robôs (deve ficar vazio) -->
+          <div class="honeypot" aria-hidden="true">
+            <label for="website">Não preencha este campo</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="aviso" role="note" style="margin-bottom:1.4rem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            <p>Enviar uma ideia não garante que o SENAI vá implementá-la. Todas as contribuições serão analisadas.</p>
+          </div>
+
+          <div class="form-acoes">
+            <button type="submit" id="botao-enviar" class="btn btn-verde">Enviar contribuição</button>
+            <a class="btn btn-contorno" href="projetos.html">Ver projetos existentes</a>
+          </div>
+
+          <div id="mensagem-status" class="mensagem-status" role="status" aria-live="polite"></div>
+        </form>
+
+        <aside class="lateral" aria-label="Ajuda para escolher o tipo de envio">
+          <div class="lateral-card">
+            <h2>Qual tipo escolher?</h2>
+            <dl>
+              <dt>Relatar um problema</dt>
+              <dd>Algo está errado ou desperdiçando recursos agora.</dd>
+              <dt>Enviar uma sugestão</dt>
+              <dd>Uma ideia simples para melhorar algo.</dd>
+              <dt>Propor um projeto</dt>
+              <dd>Um plano completo, com materiais, custo e resultados esperados.</dd>
+            </dl>
+          </div>
+          <div class="lateral-card lateral-card--verde">
+            <h2>Antes de enviar</h2>
+            <p>Sua contribuição será analisada, mas enviar uma ideia não garante que ela será implementada.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Portal de Sustentabilidade</h2>
+          <p>Um espaço para os alunos do SENAI participarem das melhorias da escola.</p>
+        </div>
+        <div>
+          <h2>Navegação</h2>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="registrar.html">Registrar uma ideia</a></li>
+            <li><a href="projetos.html">Acompanhar projetos</a></li>
+            <li><a href="sobre.html">Sobre nós</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Tipos de envio</h2>
+          <ul>
+            <li><a href="registrar.html?tipo=problema">Relato de problema</a></li>
+            <li><a href="registrar.html?tipo=sugestao">Sugestão</a></li>
+            <li><a href="registrar.html?tipo=projeto">Proposta de projeto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-fim"><p>Enviar uma ideia não garante sua implementação. Protótipo do portal de sustentabilidade FIRJAN SENAI.</p></div>
+    </div>
+  </footer>
+</body>
+</html>
